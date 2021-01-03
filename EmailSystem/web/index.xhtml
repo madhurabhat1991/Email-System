@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="css/prelogin.css?rnd=132"/>
+    </h:head>
+    <h:body>
+        <ui:composition template = "templates/preCommon.xhtml">
+            <ui:define name="title">Welcome</ui:define>
+            <ui:define name = "content">
+                <h3><b>Welcome to MailNet!</b></h3>
+                <h5>Stay connected to your network across the globe</h5><br/>
+                <h5>New to MailNet?&emsp;
+                    <h:commandButton styleClass="btn btn-primary" value="Sign Up" action="signUp.xhtml"/>
+                </h5>
+                <h5>Returning user?&emsp;
+                    <h:commandButton styleClass="btn btn-primary" value="Login" action="login.xhtml"/>
+                </h5>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="css/prelogin.css?rnd=132"/>
+    </h:head>
+    <h:body>
+        <ui:composition template = "templates/preCommon.xhtml">
+            <ui:define name="title">Inbox</ui:define>
+            <ui:define name = "content">
+                <h2>Welcome #{login.user.name}!</h2>
+
+                <h:commandButton value="Compose New Email" action="#{login.user.newEmail()}"/>
+                &nbsp;
+                <h:commandButton value="Inbox" action="inbox.xhtml"/>
+                &nbsp;
+                <h:commandButton value="Sent" action="sent.xhtml"/>
+                &nbsp;
+                <h:commandButton value="Trash" action="trash.xhtml"/>
+                &nbsp;
+                <h:commandButton value="Sign Out" action="#{login.user.signOut()}"/>
+
+                <!--            Sent<br/>
+                            Trash<br/>-->
+
+                <h3>Your most two recent emails</h3>
+                <h:dataTable rows="#{login.user.recentEmails.size()}"
+                             value="#{login.user.recentEmails}" var="obj"
+                             border="2" cellpadding="5" cellspacing="1">
+                    <h:column>
+                        <f:facet name="header">From</f:facet>
+                            #{obj.sender}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Email title</f:facet>
+                        <h:commandLink value="#{obj.title}" action="#{login.user.selectEmail(obj)}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Date</f:facet>
+                            #{obj.date}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Status</f:facet>
+                            #{obj.status}
+                    </h:column>
+                </h:dataTable>
+
+                <br/><br/>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

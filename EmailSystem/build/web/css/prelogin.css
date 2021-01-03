@@ -1,0 +1,66 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 19, 2020, 4:50:49 PM
+    Author     : madhu
+*/
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Palatino Linotype', 'Georgia', 'Times New Roman', 'Arial', 'Helvetica', sans-serif;
+}
+
+.bgimg {
+    /*background-image: url("images/welcome.jpg");*/
+    background-image: url('../images/welcome.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-size: 17px;
+}
+
+.topleft {
+    position: absolute;
+    top: 0;
+    left: 16px;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    width: 100%;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.boxed {
+    border: 1px solid white;
+    padding: 4px;
+}
+
+.boxedin {
+    border: 3px solid white;
+    padding: 20px;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.inputDetails input {
+    width: 350px;
+}

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="css/common.css?rnd=132"/>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <h:form>
+                <div class="navbar fixed-top navbar-expand-lg navbar-light bg-light quick-links">
+                    <div class="navbar-nav">
+                        <br/>
+                        <h:commandLink action="index.xhtml" style="font-size: 25px;color: white;">
+                            <img src="images/logo.png" height="50px" width="120px"></img>
+                        </h:commandLink>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <h:commandButton styleClass="btn btn-primary" value="Compose" action="#{login.user.newEmail()}"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <h:commandButton styleClass="btn btn-primary" value="Inbox" action="inbox.xhtml"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <h:commandButton styleClass="btn btn-primary" value="Sent" action="sent.xhtml"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <h:commandButton styleClass="btn btn-primary" value="Trash" action="trash.xhtml"/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <h:commandButton styleClass="btn btn-primary" value="Sign Out" action="#{login.user.signOut()}"/>
+                    </div>
+                </div>
+                <br/><br/>
+            </h:form>
+        </ui:composition>
+    </h:body>
+</html>
+
